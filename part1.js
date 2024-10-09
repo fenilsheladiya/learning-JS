@@ -348,14 +348,236 @@ let arr = [
 
 //other way
 
-let arr1 = ["fenil","fs","fgh","jkl"];
+// let arr1 = ["fenil","fs","fgh","jkl"];
 
-let [item1,item2,...item3] = arr1;
+// let [item1,item2,...item3] = arr1;
 
-console.log(item1)
-console.log(item2)
-console.log(item3)
+// console.log(item1)
+// console.log(item2)
+// console.log(item3)
+
+//!asynchronous
+//used for wait and set specific time for run a specific code
+
+// console.log("this");
+// // console.log("is");
+// setTimeout(()=>{
+//     console.log("is");
+// },2000);
+
+//other way
+
+// setTimeout(fun,2000);
+
+// function fun(){
+//     console.log("is");
+// }
+// console.log("asynchronous");
+
+//!call back function
 
 
+// function fun(val){
+//     console.log(val);
+
+// }
+
+// function add(a,b,callback){
+//     let sum = a+b;
+//     callback(sum);
+// }
+
+// add(5,10,fun);
 
 
+//!callback hell
+
+//simple call back
+
+// function loadingdata(){
+//     setTimeout(()=>{
+//         console.log("loading...");
+//     },1000); 
+// }
+
+// function collectingdata(){
+//     setTimeout(()=>{
+//         console.log("collecting data...");
+//     },2000); 
+    
+// }
+
+// function approvingdata(){
+//     setTimeout(()=>{
+//         console.log("approving data...");
+//     },3000);
+// }
+
+// function approved(){
+//     setTimeout(()=>{
+//         console.log("approved...");
+//     },4000);
+// }
+
+// loadingdata();
+//  collectingdata();
+//  approvingdata();
+//  approved();
+
+ //other way -- for more than function
+
+// function loadingdata(callback){
+//     setTimeout(()=>{
+//         console.log("loading...");
+//         callback();
+//     },1000); 
+// }
+
+// function collectingdata(callback){
+//     setTimeout(()=>{
+//         console.log("collecting data...");
+//         callback();
+//     },2000); 
+    
+// }
+
+// function approvingdata(callback){
+//     setTimeout(()=>{
+//         console.log("approving data...");
+//         callback();
+//     },3000);
+// }
+
+// function approved(){
+//     setTimeout(()=>{
+//         console.log("approved...");
+        
+//     },4000);
+// }
+
+// loadingdata(function(){
+//     collectingdata(function(){
+//         approvingdata(function(){
+//             approved();
+//         });
+//     });
+// });
+ 
+
+//!solution callback hell -- promise
+
+// function fun(task){
+//     return new Promise((resolve,reject)=>{
+//         if(task){
+//             resolve("completed");
+//         }else{
+//             reject("not completed");
+//         }
+//     })
+// }
+
+// let onresolve = (res)=>{
+//     console.log(res);
+// }
+
+// let onreject = (res)=>{
+//     console.log(res);
+// }
+
+// fun(false).then(onresolve).catch(onreject);
+
+// //!solution
+//  function loadingdata(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             console.log("loading..."); 
+//             resolve();
+//         },1000); 
+//     }) 
+//     }
+    
+//     function collectingdata(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 console.log("collecting data...");
+//                 resolve();
+//             },2000); 
+//         })  
+//     }
+    
+//     function approvingdata(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 console.log("approving data...");
+//                 reject('error:not fulfilled');  //realtime use if-else condition 
+//             },3000);
+//         })
+        
+//     }
+    
+//     function approved(){
+//         setTimeout(()=>{
+//             console.log("approved...");
+            
+//         },4000);
+//     }
+
+
+//     loadingdata().then(collectingdata).then(approvingdata).then(approved).catch((err)=>{
+//         console.log(err)
+//     })
+    
+//!promises for better solution - async-await
+
+
+// function loadingdata(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             console.log("loading..."); 
+//             resolve();
+//         },1000); 
+//     }) 
+//     }
+    
+//     function collectingdata(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 console.log("collecting data...");
+//                 resolve();
+//             },2000); 
+//         })  
+//     }
+    
+//     function approvingdata(){
+//         return new Promise((resolve,reject)=>{
+//             setTimeout(()=>{
+//                 console.log("approving data...");
+//                 reject('error:not fulfilled');  //realtime use if-else condition 
+//             },3000);
+//         })
+        
+//     }
+    
+//     function approved(){
+//         setTimeout(()=>{
+//             console.log("approved...");
+            
+//         },4000);
+//     }
+
+// async function ex(){
+    // await loadingdata();
+    // await collectingdata();
+//     await approvingdata();
+//     await approved();
+// }
+
+//1
+// ex().catch((err)=>{
+//     console.log(err)
+// });
+
+//2
+// ex().then(collectingdata).catch((err)=>{
+//     console.log(err)
+// });
