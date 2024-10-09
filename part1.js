@@ -151,3 +151,211 @@
 // console.log(a<=b);
 //!logical operator(a,b,a||b or , a && b and,!a not)
 
+//!conditional
+
+// let age = 18;
+
+// if(age >= 18){
+//     console.log("you are eligibe");
+// }else{
+//     console.log("you are not eligible");
+// }
+
+
+// let ch=1;
+
+// switch(ch){
+//     case 1:
+//         console.log("one");
+//         break;
+//     case 2:
+//         console.log("two");
+//         break;
+//     case 3:
+//         console.log("three");
+//         break;
+//     default:
+//         console.log("invalid input");
+// }
+
+
+// for(var i=0;i<=10;i++){
+//     // console.log("2 * " +i+ "=" + 2*i);
+//     // console.log(`2 * ${i} = ${2*i}`);  //back
+// }
+
+// var i = 1;
+// while(i<=10){
+//     console.log(i);
+//         i++;
+// }
+
+// function name(){
+//     console.log("hello");
+// }
+
+// name();
+
+// let a=5;
+
+// function local(){
+//     let b=3;
+
+//     console.log(b);
+// }
+
+// local();
+
+// console.log(a);
+
+// let name = ["fenil","dd","ff"];
+// console.log(name);
+
+// let name = ["fenil","dd","ff"];
+// // name.push("gg");
+// // name.unshift("gh");
+// name.splice(1,2,"fff");
+
+// // console.log(name.length);
+// console.log(name);
+
+// let num = [10,20,30,40,10,50];
+
+// for(let i = 0 ; i< num.length ; i++){
+//     console.log(num[i]);
+// }
+
+// num.forEach((val,index,array) => {
+//   console.log(val + " " +index+ " " +array);
+// })
+
+// let a = num.map((val,index) =>{
+//     return val;
+// });
+
+// console.log(a);
+
+// let num2 = [11,12,13,14,15];
+
+// console.log(num.concat(num2));
+
+// console.log(num.indexOf(30));
+// // console.log(num.reverse());
+// console.log(num.sort());
+// let a = num.slice(1,4); //display specific
+// let b = num.splice(1,4); //remove specific
+
+// console.log(b);
+// console.log(a);
+
+// console.log( typeof num.toString());
+
+// let a = num.filter((val,index,arr) =>{
+//    if(val >= 10 && val <= 25){
+//     return val;
+//    }
+// })
+// let a = num.findIndex((val,index) =>{
+    
+//      return val == 10;
+    
+//  })
+
+// let a = num.findLastIndex((val,index) =>{
+    
+//     return val == 10;  //lastindex ise when two values are same in array
+   
+// })
+// console.log(a);
+
+// let num = '10,20,30';
+
+// let arr = num.split(',');
+// // arr.forEach(element => {
+// //     console.log(element);
+// // })
+
+// let join = arr.join("and");
+// console.log(join);
+
+
+//for in and for of
+// let arr = [10,20,30,40];
+
+// // for(let arf in arr){  //index value print thorugh value
+// //     console.log(arr[arf]);
+// // }
+// for(let arf of arr){
+//     console.log(arf); //directly access
+// }
+
+let arr = [
+    ["fenil",20],
+    ["abhi",30],
+    ["dd",24],
+]
+// console.log(arr[1][0]);
+
+// for(let i = 0;i<arr.length;i++){
+//     {
+//         for(let j = 0;j<arr[i].length;j++){
+//             console.log(arr[i][j]);
+//         }
+        
+//     }
+// }
+
+// arr.forEach(data => {
+//  data.forEach(val =>{
+//     console.log(val);
+//  })
+// });
+
+// for(let ar of arr){
+//     for(i of ar){
+//         console.log(i);
+//     }
+// }
+
+// arr1 = ["fenil",33,true];
+
+// arr1.push("fs");
+// arr2 = arr1;
+
+// console.log(arr1);
+// console.log(arr2);
+
+// let arr1 = ["fenil",33,true];
+// // let arr2 = arr1.slice(0).concat(["item"]);
+// //other way
+// let arr2 = [...arr1];
+
+// arr1.push("fs");
+
+
+// console.log(arr1);
+// console.log(arr2);
+
+//!array destructing
+
+// let arr1 = ["fenil","fs"];
+
+// let item1 = arr1[0];
+// let item2 = arr1[1];
+
+// console.log(item1)
+// console.log(item2)
+
+//other way
+
+let arr1 = ["fenil","fs","fgh","jkl"];
+
+let [item1,item2,...item3] = arr1;
+
+console.log(item1)
+console.log(item2)
+console.log(item3)
+
+
+
+
