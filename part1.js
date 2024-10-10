@@ -289,11 +289,11 @@
 //     console.log(arf); //directly access
 // }
 
-let arr = [
-    ["fenil",20],
-    ["abhi",30],
-    ["dd",24],
-]
+// let arr = [
+//     ["fenil",20],
+//     ["abhi",30],
+//     ["dd",24],
+// ]
 // console.log(arr[1][0]);
 
 // for(let i = 0;i<arr.length;i++){
@@ -581,3 +581,338 @@ let arr = [
 // ex().then(collectingdata).catch((err)=>{
 //     console.log(err)
 // });
+
+
+//!object
+
+// let obj = {
+//     name:"fenil",
+//     age:20,
+//     "lastname":"sheadiya",
+//     fun: function(){
+//         console.log("this is function")
+//     },
+//     arr:[20,30,40,50]
+// }
+
+// console.log(obj["lastname"]);
+// console.log(obj.age);
+// obj.fun();
+// obj.key="added"
+// console.log(obj.arr);
+// console.log(obj);
+
+// let a ="key2";
+// obj[a]="item2"
+
+// for(let i in obj){
+//     console.log(obj[i]);
+// }
+
+// for(let i of Object.keys(obj)){
+//     console.log(i);
+// }
+
+// for(let i of Object.keys(obj)){
+//     console.log(obj[i]);
+// }
+
+
+//!array of object
+
+// let arr2 =[
+//     {name:"fenil",age:20},
+//     {name:"sheadiya",age:22},
+//     {name:"rahul",age:21}
+// ]
+// console.log(arr2);
+
+// for(let i in arr2){
+//     console.log(arr2[i]);   
+// }
+// let[{name},item2]= arr2;
+// console.log(name);
+// console.log(item2);
+
+
+//!function in function
+
+// function fun(){
+//     console.log("function 1");
+//     function fun2(){
+//         console.log("function 2");
+//     }
+//     fun2();
+// }
+// fun();
+
+//!lexical scope-- solution
+
+// function fun(){
+//     var a = 1; //?lexical scope -- its accessed by second function
+//     console.log("function 1" +a);
+//     function fun2(){
+//         console.log("function 2" +a);
+//     }
+//     fun2();
+// }
+// fun();
+
+
+//!debugger
+//?error correction and find where code break
+
+// function fun(){
+//     debugger;
+//     for(let i=0;i<=8;i++){
+//         console.log(i);  
+//     }
+// }
+// fun();
+
+//!sets == simmilar to array
+
+// const arr =[10,20,30,40,50,50];
+// console.log(arr.length);
+
+// //?unique value doesn't repeated
+// const s = new Set([10,20,30,40,50,50,50]);
+// s.add(70);
+// s.add("fenil")  
+// console.log(s);
+
+// //? other way to find size of set
+// length=0;
+// for(let element of s){
+//     length++;
+// }
+// console.log(length);
+
+//!map -- similar to object
+
+// var map = new Map([[1,"one"],
+// ["fname","fenil"],
+// ["number",[1,2,3,4,5]]])
+
+// console.log(map.get(1));
+
+// console.log(map);
+
+//set values
+// var map2=new Map();
+// map2.set("fname","fenil")
+// console.log(map2);
+
+//!this -- specific this value
+// var obj={
+//     name:"fenil",
+//     age:20,
+//     fun:function(){
+//         console.log(this.name);
+//     }
+// }
+// obj.fun();
+
+// function fun(){
+//     console.log(this);
+// }
+
+// fun();
+
+//!new
+
+// function fun(){
+//     let fname = "fenil";
+//     this.fname = fname;
+// }
+
+ // console.log(new fun());
+// var obj = new fun();  
+// console.log(obj.fname);
+
+ 
+//!constructuor function == target
+//?technically are reguar function
+//?they are nme with capital letter first
+//?they should be executed only with "new" operator
+
+// function user(name){
+//     if(!new.target){
+//         return new user(name)
+//     }
+//     this.name=name;
+// }
+// let person = user("fs");
+// let person = new user("fs"); //other
+// console.log(person.name);
+
+
+//!symbol
+//?a symbol represents a unique identifier
+
+// let sym = Symbol("id");
+// console.log(sym.toString());
+// console.log(sym.description);
+
+// let sym = Symbol("id");
+// let sym1 = Symbol("id");
+
+// console.log(sym === sym1);
+
+// let id = Symbol("id");
+
+// let obj = {
+//     name:"fenil",
+//     // [id]:33
+// }
+
+//other way 
+// obj[id]=2; //outside declare
+
+// console.log(obj);
+// console.log(obj.name);
+// console.log(obj[id]);
+
+
+
+//!proto 
+
+//?__proto__
+//references
+
+// var obj = {
+//     fname :"fenil"
+// };
+
+// var obj2 = {
+//     lname:"sheladiya"
+// }
+
+// obj2.__proto__ = obj; //reference
+
+// console.log(obj2.fname);
+
+//other way
+// var obj ={
+//     name : "fenil"
+// };
+
+// obj2 = Object.create(obj);
+// obj2.lname="sheladiya"
+// console.log(obj2.name);
+// console.log(obj2.lname);
+
+//!prototype
+
+// function Person(name,age){
+//     let person = Object.create(obj)
+//     person.name = name;
+//     person.age = age;
+//     return person
+// }
+
+// var obj = {
+//     greet () {
+//         console.log('hello ${this.name}')        
+//     }
+// }
+
+// let user = Person("fenil",33)
+// console.log(user);
+// user.greet()
+
+// console.log(Person.prototype.toString);
+
+//?other better way
+
+
+// function Person(name,age){
+//     let person = Object.create(Person.prototype)
+//     person.name = name;
+//     person.age = age;
+//     return person
+// }
+
+
+// Person.prototype.greet = function() {
+//         console.log('hello ${this.name}')        
+//  }
+
+
+// let user = Person("fenil",33)
+// console.log(user);
+// user.greet()
+
+// console.log(Person.prototype);
+
+//?simple use new keyword
+
+// function Person(name,age){
+//     this.name = name;
+//     this.age = age;
+// }
+
+
+// Person.prototype.greet = function() {
+//         console.log('hello ${this.name}')        
+//  }
+
+
+// let user = new Person("fenil",33)
+// console.log(user);
+// user.greet();
+
+//!class = is a better way
+
+
+// class person{
+//     constructor(name,age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     greet(){
+//         console.log('hello ${this.name}');
+//     }
+// }
+
+// let user = new person("fenil",33)
+// console.log(user);
+// user.greet();
+
+class user{
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    sayhi(){
+        console.log("hello" + this.name);
+        
+    }
+}
+
+let emp = new user("fenil",33);
+// console.log(emp.sayhi());
+emp.sayhi();
+
+let emp1 = new user("abh",33);
+emp1.sayhi();
+
+
+console.log(typeof user);
+console.log(user.prototype.sayhi);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
