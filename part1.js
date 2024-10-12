@@ -879,27 +879,188 @@
 // console.log(user);
 // user.greet();
 
-class user{
-    constructor(name,age){
-        this.name = name;
-        this.age = age;
-    }
-    sayhi(){
-        console.log("hello" + this.name);
+// class user{
+//     constructor(name,age){
+//         this.name = name;
+//         this.age = age;
+//     }
+//     sayhi(){
+//         console.log("hello" + this.name);
         
-    }
-}
+//     }
+// }
 
-let emp = new user("fenil",33);
+// let emp = new user("fenil",33);
 // console.log(emp.sayhi());
-emp.sayhi();
+// emp.sayhi();
 
-let emp1 = new user("abh",33);
-emp1.sayhi();
+// let emp1 = new user("abh",33);
+// emp1.sayhi();
 
 
-console.log(typeof user);
-console.log(user.prototype.sayhi);
+// console.log(typeof user);
+// console.log(user.prototype.sayhi);
+
+//!DOM -- manipulate the html element
+
+//!selectors
+//?document.getElementsByTagName("select")
+//?document.getElementById("select");
+//?document.getElementsByClassName;
+//?document.querySelector("select"); specific one
+//?document.querySelectorAll("select"); same class name all
+
+//!parent element
+
+// var parent = document.querySelector('li'); //select li
+// var p = parent.parentElement;//means li parent is ul 
+// console.log(p); 
+
+//!child
+// var child = document.querySelector('li'); //select li
+// var p = child.children; // means all html values
+// var p = child.children[0];
+// var p = child.childnodes // means show spaces and html element
+
+//!previouselementsibling
+
+// console.log(document.querySelector('.hero').previousElementSibling);//hero is a class name - means its return previous element value
+
+// console.log(document.querySelector('.hero').previousElementSibling.previousElementSibling);//means return next previous
+
+
+// var a = document.querySelectorAll('.hero');
+// if(a.previousElementSibling == null){
+//     console.log('siblings not found');
+// }else{
+//     console.log(a.previousElementSibling);
+// }
+
+//?both class are same name and return both previous 
+
+// var a = document.querySelectorAll('.hero');
+// a.forEach((ele)=>console.log(ele.previousElementSibling));
+
+//?appendchild -- add your own child
+
+// const ul = document.querySelector('ul');
+// const newE = document.createElement('li');
+// newE.textContent = "fs";
+// ul.appendChild(newE);//add child
+
+//?remove
+
+// const ul = document.querySelector('li');
+// ul.remove();
+
+//?replace child
+// const list = document.querySelector('ul');
+// const childTochange = list.children[1]; //select which child element change
+// const newLi = document.createElement('li'); 
+// newLi.textContent = "fs";
+// list.replaceChild(newLi.childTochange)
+
+
+//?parent node or parent element both are simmilar
+
+// var parent = document.querySelector('li'); //select li
+// var p = parent.parentElement;//means li parent is ul 
+// console.log(p);
+
+// var parent = document.querySelector('li'); //select li
+// var p = parent.parentNode;//means li parent is ul 
+// console.log(p);
+
+
+//?nextsiblings 
+// const p = document.querySelector('li');
+// console.log(p.nextElementSibling);
+
+//?firstchild
+
+// var fchild = document.querySelector('li');
+
+// console.log(fchild.firstChild);
+// console.log(fchild.firstElementChild); //space text
+
+// //?lastchild
+
+// var lchild = document.querySelector('li');
+
+// console.log(lchild.lastChild);
+// console.log(lchild.lastElementChild); //space text
+
+
+// //!innerHTML //means change
+// let a = document.querySelector('.hero');
+// a.innerHTML = <b>fenil</b>
+// console.log(a);
+
+// //!outer
+
+// let a = document.querySelector('.hero');
+// a.outerHTML = <b>fenil</b>  //means li tag has remove //print fenil only no element 
+// console.log(a.outerHTML);
+
+//!styling
+
+// backgroundcolor change
+
+
+// document.body.style.backgroundColor = "blue";
+
+
+//!addEventListener
+// document.getElementById('btn').addEventListener('click',fun)
+
+// function fun(){
+//     console.log('button clicked');
+// }
+
+//!window location
+
+// let loc = document.getElementById('location');
+// loc.innerHTML = window.location.href; //current url
+// loc.innerHTML = window.location.hostname; //current domain
+// loc.innerHTML = window.location.pathname; //current path
+
+// loc.innerHTML = window.location.assign("url of any website / redirect page");
+
+// loc.innerHTML = window.location.reload(); //reload the page
+
+//! popups
+// alert("hello");
+
+/// let confirmBox = confirm("are you sure?"); //return true or false
+// prompt("hello how are you")
+
+
+//!event delegation ==nested element selected
+
+// const div = document.getElementsByTagName('div')[0];
+
+// div.addEventListener('click', (event) => {
+//     if(event.target.tagName == 'button'){
+// console.log("button was clicked");
+// }
+// })
+
+// div.addEventListener('click', (event) => {
+//     if(event.target.tagName == 'span'){
+// console.log("span was clicked");
+// }
+// })
+
+
+//!dimension -- all info about elements 
+
+// let a = document.querySelector('div');
+// console.log(a.getBoundingClientRect); // give all info
+
+// console.log(a.clientWidth); //width of element including padding and border
+
+
+
 
 
 
